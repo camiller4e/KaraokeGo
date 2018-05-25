@@ -9,12 +9,12 @@ require_relative("../song.rb")
 class BarTest<Minitest::Test
 
   def setup
-    @bar = Bar.new("Karaoke Go!", [], 0)
+    @bar = Bar.new("Karaoke Go!", [], 0, 5)
     @guest = Guest.new("Curly Boy", 50)
     @song = Song.new("Technologic", "Daft Punk")
-    @room1 = Room.new(1, 20, [], [], 5)
-    @room2 = Room.new(2, 10, [], [], 5)
-    @room3 = Room.new(3, 5, [], [], 5)
+    @room1 = Room.new(1, 20, [], [])
+    @room2 = Room.new(2, 10, [], [])
+    @room3 = Room.new(3, 5, [], [])
   end
 
   def test_bar_has_name

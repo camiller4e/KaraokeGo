@@ -15,5 +15,10 @@ class Bar
 
   end
 
+  def check_out_guest(guest, room)
+    room.remove_guest_from_room(guest)
+    p "Thanks for coming!"
+  end
+
 
 end

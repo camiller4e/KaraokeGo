@@ -10,7 +10,7 @@ class GuestTest<Minitest::Test
   def setup
     @guest = Guest.new("Curly Boy", 50)
     @song = Song.new("I Love My Computer", "Bad Religion")
-    @room = Room.new(1, 20, [])
+    @room = Room.new(1, 20, [], [])
   end
 
 def test_guest_has_name
