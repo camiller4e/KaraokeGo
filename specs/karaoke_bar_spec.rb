@@ -12,9 +12,14 @@ class BarTest<Minitest::Test
     @bar = Bar.new("Karaoke Go!", [], 0, 5)
     @guest = Guest.new("Curly Boy", 50)
     @song = Song.new("Technologic", "Daft Punk")
-    @room1 = Room.new(1, 20, [], [])
-    @room2 = Room.new(2, 10, [], [])
-    @room3 = Room.new(3, 5, [], [])
+    @song2 = Song.new("I Love My Computer", "Bad Religion")
+    @song3 = Song.new("Computer Blue", "Prince")
+    @song4 = Song.new("Digital Witness", "St. Vincent")
+    @song5 = Song.new("Computer Love", "Kraftwerk")
+    @song6 = Song.new("Total Eclipse of the Heart", "Bonnie Tyler")
+    @room1 = Room.new(1, 0, [], [])
+    @room2 = Room.new(2, 0, [], [])
+    @room3 = Room.new(3, 0, [], [])
   end
 
   def test_bar_has_name
