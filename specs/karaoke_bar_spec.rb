@@ -17,9 +17,9 @@ class BarTest<Minitest::Test
     @song4 = Song.new("Digital Witness", "St. Vincent")
     @song5 = Song.new("Computer Love", "Kraftwerk")
     @song6 = Song.new("Total Eclipse of the Heart", "Bonnie Tyler")
-    @room1 = Room.new(1, 0, [], [])
-    @room2 = Room.new(2, 0, [], [])
-    @room3 = Room.new(3, 0, [], [])
+    @room1 = Room.new(1, 20, [], [])
+    @room2 = Room.new(2, 10, [], [])
+    @room3 = Room.new(3, 5, [], [])
   end
 
   def test_bar_has_name
@@ -43,4 +43,10 @@ class BarTest<Minitest::Test
   assert_equal(5, @bar.till)
   end
 
+  def test_check_out_guest
+  @rooms = [@room1, @room2, @room3]
+  @bar.check_in_guest(@guest, @room1)
+  @bar.check_out_guest(@guest, @room1)
+  assert_equal(0, @room1.guests.count)
+end
 end

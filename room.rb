@@ -20,4 +20,11 @@ class Room
     @songbook << song
   end
 
+  def room_is_full()
+    if @capacity = @guests.count
+      p "Sorry, this room is full!"
+    end
+  end
+
+
 end

@@ -9,13 +9,13 @@ class Bar
   end
 
   def check_in_guest(guest, room)
-    if room.capacity <= 20
+    if room.capacity > room.guests.count
     room.add_guest_to_room(guest)
     guest.wallet -= @entryfee
     @till += @entryfee
     room.capacity += 1
   end
-  return "Not today sunshine"
+  return "Sorry, this room is full!"
   end
 
   def check_out_guest(guest, room)

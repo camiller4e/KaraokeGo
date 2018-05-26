@@ -10,6 +10,8 @@ class RoomTest<Minitest::Test
   def setup
     @room = Room.new(1, 0, [], [])
     @guest = Guest.new("Curly Boy", 50)
+    @guest2 = Guest.new("Richard", 40)
+    @guest3 = Guest.new("Blorp", 30)
     @song = Song.new("Technologic", "Daft Punk")
   end
 
@@ -37,8 +39,14 @@ def test_room_contains_no_guests
 end
 
 def test_add_songs_to_room
-  @room.add_songs(@song1)
+  @room.add_songs(@song)
   assert_equal(1, @room.songbook.count)
 end
 
+def test_room_is_full
+  @room.add_guest_to_room(@guest)
+  @room.add_guest_to_room(@guest2)
+  @room.add_guest_to_room(@guest3)
+  assert_equal("Sorry, this room is full!", @room.room_is_full)
+end
 end
